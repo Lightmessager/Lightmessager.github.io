@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
 <title id="title">From transition-state search to mechanistic hypothesis</title><desc id="desc">A workflow links candidate geometries to transition-state searches and coordination inspection, leading to a CO-assisted hypothesis that requires testing.</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#39705e"/></marker></defs>
-<rect width="1200" height="675" rx="20" fill="#f5f8f6"/>
-<g font-family="Arial, Helvetica, sans-serif" fill="#203a32">
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#6d3fd1"/></marker></defs>
+<rect width="1200" height="675" rx="20" fill="#f6f1fc"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#2a1f45">
 <text x="64" y="80" font-size="31" font-weight="700">From transition-state search to mechanistic hypothesis</text>
 
-<g fill="#fff" stroke="#a9c2b7" stroke-width="2">
+<g fill="#fff" stroke="#cdbdeb" stroke-width="2">
 <rect x="64" y="145" width="310" height="130" rx="14"/><rect x="445" y="145" width="310" height="130" rx="14"/><rect x="826" y="145" width="310" height="130" rx="14"/>
 <rect x="445" y="380" width="691" height="140" rx="14"/>
 </g>
 <g font-size="25" font-weight="700"><text x="90" y="194">Candidate geometries</text><text x="470" y="194">TS searches</text><text x="852" y="194">Coordination check</text><text x="472" y="429">CO-assisted alternative</text></g>
-<g font-size="21" fill="#536b62"><text x="90" y="234">Bond lengths / conformers</text><text x="470" y="234">Refine and diagnose</text><text x="852" y="234">Inspect the Ni centre</text><text x="472" y="472">Working hypothesis; requires computational testing</text></g>
-<g stroke="#39705e" fill="none" stroke-width="3" marker-end="url(#arrow)"><path d="M374 210H430"/><path d="M755 210H811"/><path d="M981 275V360"/></g>
+<g font-size="21" fill="#6b5f86"><text x="90" y="234">Bond lengths / conformers</text><text x="470" y="234">Refine and diagnose</text><text x="852" y="234">Inspect the Ni centre</text><text x="472" y="472">Working hypothesis; requires computational testing</text></g>
+<g stroke="#6d3fd1" fill="none" stroke-width="3" marker-end="url(#arrow)"><path d="M374 210H430"/><path d="M755 210H811"/><path d="M981 275V360"/></g>
 
-<text x="64" y="624" font-size="20" fill="#536b62">Conceptual schematic · No calculated structures, energies or validated mechanism shown</text>
+<text x="64" y="624" font-size="20" fill="#6b5f86">Conceptual schematic · No calculated structures, energies or validated mechanism shown</text>
 </g></svg>

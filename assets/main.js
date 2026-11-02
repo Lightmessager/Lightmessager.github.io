@@ -31,21 +31,39 @@
     Object.keys(map).forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
   }
 
-  // molecular-network background
+  // molecular-network background: drifting atoms, bonds, aromatic rings, pointer glow
   var c=document.getElementById('mol');
   if(!c||matchMedia('(prefers-reduced-motion:reduce)').matches)return;
-  var x=c.getContext('2d'),W,H,P=[],N=0,raf;
-  function size(){var r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
-    N=Math.round(Math.min(46,W*H/16000));P=[];for(var i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.25,vy:(Math.random()-.5)*.25,r:2+Math.random()*3.2,h:Math.random()<.18})}
+  var x=c.getContext('2d'),W,H,P=[],R=[],N=0,raf,mx=-999,my=-999,t=0;
   function col(n){return getComputedStyle(root).getPropertyValue(n).trim()}
+  var pal=[];function loadPal(){pal=[col('--accent'),col('--accent-2'),col('--accent-3')]}
+  function size(){var r=c.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    N=Math.round(Math.min(58,W*H/14000));P=[];R=[];
+    for(var i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:2+Math.random()*3.4,k:Math.random()<.2?1:(Math.random()<.2?2:0),ph:Math.random()*6.28});
+    for(i=0;i<Math.max(3,Math.round(W/260));i++)R.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.14,s:22+Math.random()*26,a:Math.random()*6.28,w:(Math.random()-.5)*.004,k:i%3});
+    loadPal()}
+  function ring(r){x.save();x.translate(r.x,r.y);x.rotate(r.a);x.strokeStyle=pal[r.k];x.globalAlpha=.3;x.lineWidth=1.6;x.beginPath();
+    for(var j=0;j<6;j++){var a=j*Math.PI/3;x[j?'lineTo':'moveTo'](Math.cos(a)*r.s,Math.sin(a)*r.s)}x.closePath();x.stroke();
+    x.globalAlpha=.18;x.beginPath();for(j=0;j<6;j++){a=j*Math.PI/3+Math.PI/6;x[j?'lineTo':'moveTo'](Math.cos(a)*r.s*.55,Math.sin(a)*r.s*.55)}x.closePath();x.stroke();x.restore()}
   function draw(){
-    x.clearRect(0,0,W,H);var a=col('--accent'),b=col('--accent-2');
-    for(var i=0;i<N;i++){var p=P[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+    t+=.016;x.clearRect(0,0,W,H);
+    R.forEach(function(r){r.x+=r.vx;r.y+=r.vy;r.a+=r.w;if(r.x<-60)r.x=W+60;if(r.x>W+60)r.x=-60;if(r.y<-60)r.y=H+60;if(r.y>H+60)r.y=-60;ring(r)});
+    for(var i=0;i<N;i++){var p=P[i];
+      var dx0=p.x-mx,dy0=p.y-my,d0=dx0*dx0+dy0*dy0;if(d0<22000){var f=(1-d0/22000)*.5;p.vx+=dx0/Math.sqrt(d0+1)*f*.08;p.vy+=dy0/Math.sqrt(d0+1)*f*.08}
+      p.vx*=.995;p.vy*=.995;p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
       for(var j=i+1;j<N;j++){var q=P[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
-        if(d<130){x.globalAlpha=(1-d/130)*.45;x.strokeStyle=a;x.lineWidth=1.4;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}}
-    for(i=0;i<N;i++){p=P[i];x.globalAlpha=.7;x.fillStyle=p.h?b:a;x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill()}
-    raf=requestAnimationFrame(draw);
+        if(d<140){var g=x.createLinearGradient(p.x,p.y,q.x,q.y);g.addColorStop(0,pal[p.k]);g.addColorStop(1,pal[q.k]);
+          x.globalAlpha=(1-d/140)*.5;x.strokeStyle=g;x.lineWidth=1.5;x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}}
+    for(i=0;i<N;i++){p=P[i];var pr=p.r*(1+.12*Math.sin(t*1.6+p.ph));
+      x.globalAlpha=.16;x.fillStyle=pal[p.k];x.beginPath();x.arc(p.x,p.y,pr*3,0,6.283);x.fill();
+      x.globalAlpha=.85;x.beginPath();x.arc(p.x,p.y,pr,0,6.283);x.fill()}
+    x.globalAlpha=1;raf=requestAnimationFrame(draw);
   }
+  var hero=c.parentNode;
+  hero.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top});
+  hero.addEventListener('pointerleave',function(){mx=my=-999});
   size();draw();addEventListener('resize',size);
+  new MutationObserver(loadPal).observe(root,{attributes:true,attributeFilter:['data-theme']});
+  matchMedia('(prefers-color-scheme:dark)').addEventListener&&matchMedia('(prefers-color-scheme:dark)').addEventListener('change',loadPal);
   document.addEventListener('visibilitychange',function(){document.hidden?cancelAnimationFrame(raf):draw()});
 })();
