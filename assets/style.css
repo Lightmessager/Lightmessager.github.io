@@ -190,3 +190,11 @@ a.plain{color:inherit}a.plain:hover{color:var(--accent);text-decoration:none}
 .pn a:last-child{text-align:right}
 .pn .solo{grid-column:1/-1}
 @media(max-width:560px){.pn{grid-template-columns:1fr}.pn a:last-child{text-align:left}}
+
+/* AI & ML */
+.tag.ai{background:linear-gradient(90deg,var(--accent-soft),color-mix(in srgb,var(--accent-2) 22%,transparent));color:var(--ink);border-color:color-mix(in srgb,var(--accent-2) 45%,transparent);font-weight:500}
+.ai-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.ai-cards .card:hover{transform:none;border-color:var(--line)}
+.ai-cards .card::after{content:"";position:absolute;left:26px;right:26px;top:0;height:3px;border-radius:0 0 3px 3px;background:linear-gradient(90deg,var(--accent),var(--accent-2))}
+.ai-cards .card p a{font-weight:600}
+@media(max-width:760px){.nav li a{padding:6px 8px}}
