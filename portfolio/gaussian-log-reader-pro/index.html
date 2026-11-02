@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GaussianReadPro · Yixuan Fan</title>
+<title>GaussianReaderPro · Yixuan Fan</title>
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/assets/style.css"></head>
@@ -9,29 +9,29 @@
 <nav><ul><li><a href="/#research">Research</a></li><li><a href="/#software">Software</a></li><li><a href="/#cv">CV</a></li><li><a href="/#contact">Contact</a></li><li><button class="theme-btn" id="theme" aria-label="Toggle colour theme">☾</button></li></ul></nav></div></header>
 <main class="wrap article">
 <a class="back" href="/">← Back to home</a>
-<h1>GaussianReadPro</h1>
+<h1>GaussianReaderPro</h1>
 <div class="byline"><strong>Gaussian output analysis and reaction energy profiles</strong><br><a href="https://github.com/Lightmessager/Gaussian09d-log-reader-Pro/releases/latest">Download Windows preview</a> · <a href="https://github.com/Lightmessager/Gaussian09d-log-reader-Pro">Source code and documentation</a></div>
 <div class="chips"><span>Python</span><span>PySide6</span><span>Gaussian logs</span><span>Windows 11</span></div>
 <h2>Motivation</h2>
 <p>Comparing Gaussian calculations involves extracting energies and thermal corrections, choosing consistent references and keeping track of the original outputs. I designed the original tool around the repetitive copying and expression-building steps in my own workflow.</p>
 <h2>Current Workbench</h2>
-<p>GaussianReadPro uses a Python and Qt interface to organise calculations by source file and job. It supports Chinese and English, with chart resources bundled for offline operation.</p>
+<p>GaussianReaderPro uses a Python and Qt interface to organise calculations by source file and job. It supports Chinese and English, with chart resources bundled for offline operation.</p>
 <ul>
 <li>Batch-import Gaussian log files and inspect parsed energies alongside their source evidence.</li>
 <li>Build relative-energy expressions for individual structures and define explicit reference systems.</li>
 <li>Explore interactive 2D and 3D reaction energy profiles, compare paths and inspect selected structures.</li>
-<li>Save and restore projects, workspaces and chart view state.</li>
+<li>Save and restore projects and related application state.</li>
 <li>Export chart images, standalone HTML, data tables and source-audit information.</li>
 </ul>
 <h2>Download and Run</h2>
-<p>The current portable preview targets <strong>Windows 11 x64</strong>. Open the <a href="https://github.com/Lightmessager/Gaussian09d-log-reader-Pro/releases/latest">latest release</a>, download the Windows ZIP, and extract the complete package. Run <code>GaussianReadPro/GaussianReadPro.exe</code> while keeping the bundled <code>_internal</code> directory in place.</p>
+<p>The current portable preview targets <strong>Windows 11 x64</strong>. Open the <a href="https://github.com/Lightmessager/Gaussian09d-log-reader-Pro/releases/latest">latest release</a>, download the Windows ZIP, and extract the complete package. Run <code>GaussianReaderPro/GaussianReaderPro.exe</code> while keeping the bundled <code>_internal</code> directory in place.</p>
 <p>Source development currently targets <strong>Python 3.12</strong> and <strong>PySide6</strong>. Setup and build instructions are in the <a href="https://github.com/Lightmessager/Gaussian09d-log-reader-Pro#readme">repository README</a>.</p>
 <h2>Scientific Use</h2>
 <p>Check extracted values and species assignments against the original Gaussian outputs. Energy comparisons require consistent calculation settings, thermal corrections and stoichiometry. Source-audit exports help retain the evidence behind a reaction profile.</p>
 <h2>Project Origins</h2>
-<p>My contribution to the original tool included workflow problem identification, feature requirements, data layout and interface interaction design. The earlier Tkinter implementation was credited to <strong>Tencent Hy4preview</strong>. The linked repository now contains the Qt-based GaussianReadPro workbench.</p>
+<p>My contribution to the original tool included workflow problem identification, feature requirements, data layout and interface interaction design. The current repository contains the Qt-based GaussianReaderPro workbench and its source, tests, packaging scripts and documentation.</p>
 <p>An <a href="https://github.com/Lightmessager/Gaussian09D-Energy-Analysis-From-Log-Files-">earlier Gaussian09 extraction script</a> is also available. My programming background is described in my <a href="/cv/">CV</a>.</p>
-<nav class="pn" aria-label="More work"><a href="/portfolio/surf-2025-26/"><small>Previous · SURF 2025–26</small>Ni-Catalysed Five-Membered Cyclisation</a><a href="/#contact"><small>Back to</small>Home</a></nav>
+<nav class="pn" aria-label="More work"><a href="/portfolio/surf-2025-26/"><small>Previous · SURF 2025–26</small>Computational Study of a Metal-Catalysed Skeletal-Editing Reaction</a><a href="/#contact"><small>Back to</small>Home</a></nav>
 </main>
 <footer><div class="wrap">© 2026 Yixuan Fan · Suzhou, China</div></footer>
 <script src="/assets/main.js"></script></body></html>
