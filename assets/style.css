@@ -130,7 +130,7 @@ section.alt{background:var(--surface-2);border-block:1px solid var(--line)}
 footer{padding:30px 0 44px;color:var(--muted);font-size:.85rem;text-align:center;border-top:1px solid var(--line)}
 
 /* article pages */
-.article{padding:56px 0 80px;max-width:760px}
+.article{padding:56px 24px 80px;max-width:808px}
 .back{font-size:.9rem;color:var(--muted);display:inline-block;margin-bottom:24px}
 .article h1{font-size:clamp(2rem,5vw,3rem);margin:8px 0 14px}
 .article .byline{color:var(--muted);margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--line)}
@@ -168,3 +168,25 @@ a.plain{color:inherit}a.plain:hover{color:var(--accent);text-decoration:none}
 .profile figcaption{font-size:.78rem;color:var(--muted);text-align:center;margin-top:6px}
 .hero h1{max-width:12em}
 .portrait img{object-position:center 18%}
+
+/* v3: mobile nav + article extras */
+@media(max-width:760px){
+  .nav .wrap{flex-wrap:wrap;height:auto;padding-top:8px;padding-bottom:6px;row-gap:2px}
+  .nav nav{width:100%;overflow-x:auto;scrollbar-width:none;margin:0 -4px}
+  .nav nav::-webkit-scrollbar{display:none}
+  .nav ul{width:max-content;min-width:100%;justify-content:space-between}
+  .nav ul li:not(:last-child){display:block}
+  .nav li a{padding:6px 10px;white-space:nowrap}
+  html{scroll-padding-top:104px}
+  .brand{font-size:1.05rem}
+  .nav .theme-btn{position:absolute;top:10px;right:24px}
+  .nav .wrap{position:relative}
+}
+.article .chips{margin:-8px 0 28px}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line)}
+.pn a{display:block;padding:16px 18px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);font-family:var(--serif);font-weight:600;line-height:1.3}
+.pn a:hover{border-color:var(--accent);text-decoration:none}
+.pn a small{display:block;font:500 .72rem var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.pn a:last-child{text-align:right}
+.pn .solo{grid-column:1/-1}
+@media(max-width:560px){.pn{grid-template-columns:1fr}.pn a:last-child{text-align:left}}
