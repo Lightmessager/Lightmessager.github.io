@@ -10,6 +10,10 @@
     try{localStorage.setItem('theme',n)}catch(e){}paint();
   });
 
+  // reading progress
+  var pg=document.getElementById('progress');
+  if(pg)addEventListener('scroll',function(){var h=document.documentElement;pg.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
   // scroll reveal
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){

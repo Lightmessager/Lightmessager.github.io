@@ -7,6 +7,8 @@
 <meta name="description" content="Yixuan Fan, BSc Applied Chemistry student at XJTLU. DFT, reaction mechanisms and catalysis; applying for 2027 PhD entry in computational chemistry.">
 <meta property="og:title" content="Yixuan Fan · Computational Organometallic Chemistry">
 <meta property="og:description" content="DFT, reaction mechanisms, transition states and catalysis.">
+<meta name="theme-color" content="#0f7a63">
+<link rel="canonical" href="https://lightmessager.github.io/">
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/images/favicon.ico" sizes="any">
 <link rel="manifest" href="/images/manifest.json">
@@ -16,6 +18,8 @@
 <link rel="stylesheet" href="/assets/style.css">
 </head>
 <body>
+<a class="skip" href="#about">Skip to content</a>
+<div class="progress" id="progress"></div>
 
 <header class="nav"><div class="wrap">
   <a class="brand" href="/">Yixuan<span>.</span>Fan</a>
@@ -51,6 +55,13 @@
   </div>
 </div>
 
+<div class="wrap stats reveal">
+  <div><b>2</b><span>SURF research projects</span></div>
+  <div><b>DFT</b><span>Gaussian09 · TS searches</span></div>
+  <div><b>1</b><span>Open-source analysis tool</span></div>
+  <div><b>2027</b><span>PhD entry applications</span></div>
+</div>
+
 <section id="about"><div class="wrap">
   <div class="sec-head reveal"><div class="eyebrow">01 · About</div><h2>From mechanism to design</h2></div>
   <div class="about-grid">
@@ -78,6 +89,7 @@
       <div class="meta">SURF 2025–26</div>
       <h3>Ni-Catalysed Five-Membered Cyclisation</h3>
       <p>Transition-state searches and mechanistic diagnosis of a difficult reductive-elimination step, including inspection of the nickel coordination environment.</p>
+      <div class="chips"><span>Ni</span><span>Transition states</span><span>Reductive elimination</span></div>
       <span class="go">Read project</span>
     </a>
     <a class="card reveal" href="/portfolio/surf-2024-25/">
@@ -85,6 +97,7 @@
       <div class="meta">SURF 2024–25</div>
       <h3>Ni/Zn Reductive Cross-Electrophile Coupling</h3>
       <p>A team comparison of oxidative-addition, single-electron-transfer and concerted pathways for coupling heteroaryl bromides with tertiary alkyl halides.</p>
+      <div class="chips"><span>Ni / Zn</span><span>Cross-electrophile coupling</span><span>Co calculations</span></div>
       <span class="go">Read project</span>
     </a>
   </div>
@@ -101,7 +114,7 @@
 <section id="software"><div class="wrap">
   <div class="sec-head reveal"><div class="eyebrow">03 · Software</div><h2>Tools for auditable energetics</h2></div>
   <div class="card wide reveal" style="cursor:default">
-    <div>
+    <div class="sw">
       <div>
         <div class="meta">Scientific software · Python + Qt</div>
         <h3>GaussianReadPro</h3>
@@ -118,6 +131,18 @@
           <a class="btn" href="https://github.com/Lightmessager/Gaussian09d-log-reader-Pro">Source</a>
         </div>
       </div>
+      <figure class="profile" aria-label="Illustrative reaction energy profile">
+        <svg viewBox="0 0 420 260" role="img">
+          <g stroke="currentColor" opacity=".18"><path d="M30 40H400M30 100H400M30 160H400M30 220H400"/></g>
+          <g fill="none" stroke-width="3" stroke-linecap="round">
+            <path d="M40 170H85C120 170 125 70 160 70S200 150 235 150H270C300 150 310 100 340 100S365 190 395 190" stroke="var(--accent)"/>
+            <path d="M85 170C120 170 150 130 185 130S215 195 250 195H270" stroke="var(--accent-2)" stroke-dasharray="1 7"/>
+          </g>
+          <g fill="var(--surface)" stroke="var(--accent)" stroke-width="3"><circle cx="62" cy="170" r="6"/><circle cx="160" cy="70" r="6"/><circle cx="252" cy="150" r="6"/><circle cx="340" cy="100" r="6"/><circle cx="395" cy="190" r="6"/></g>
+          <g font-family="var(--mono)" font-size="11" fill="currentColor" opacity=".7"><text x="42" y="196">A</text><text x="148" y="54">TS1</text><text x="240" y="176">B</text><text x="326" y="84">TS2</text><text x="382" y="214">C</text><text x="8" y="22">ΔG</text></g>
+        </svg>
+        <figcaption>Illustrative profile only: not calculated data.</figcaption>
+      </figure>
     </div>
   </div>
   <p class="reveal" style="margin-top:20px;color:var(--muted);font-size:.93rem">Also: an <a href="https://github.com/Lightmessager/Gaussian09D-Energy-Analysis-From-Log-Files-">earlier Gaussian09 energy extractor</a> (SCF energies and Gibbs corrections to Excel) and <a href="https://github.com/Lightmessager/NewLeaf">NewLeaf</a>, a Ren'Py project resource repository. <a href="https://github.com/Lightmessager?tab=repositories">All repositories →</a></p>
@@ -128,9 +153,9 @@
   <div class="tl">
     <div class="tl-item reveal"><div class="when">Sep 2023 – Jun 2027 (expected)</div><h3>BSc Applied Chemistry</h3><div class="sub">Xi'an Jiaotong-Liverpool University, Suzhou, China</div>
       <ul><li>Foundations in organic, inorganic and coordination chemistry and group theory, with an interest in linking structure, orbital descriptions and reaction mechanisms.</li></ul></div>
-    <div class="tl-item reveal"><div class="when">SURF 2025–26</div><h3>Ni-Catalysed Five-Membered Cyclisation</h3><div class="sub">Supervisor: Dr Xiaotai Wang</div>
+    <div class="tl-item reveal"><div class="when">SURF 2025–26</div><h3><a class="plain" href="/portfolio/surf-2025-26/">Ni-Catalysed Five-Membered Cyclisation</a></h3><div class="sub">Supervisor: Dr Xiaotai Wang</div>
       <ul><li>Carried out most transition-state searches for the five-membered non-conjugated system.</li><li>Explored about 30 bond-length and conformational adjustments for a difficult reductive-elimination step.</li><li>Examined the Ni coordination environment and discussed a CO-assisted alternative as a hypothesis.</li><li>Wrote most of the poster text and completed its typesetting.</li></ul></div>
-    <div class="tl-item reveal"><div class="when">SURF 2024–25</div><h3>Ni/Zn Reductive Cross-Electrophile Coupling</h3><div class="sub">Dr Xiaotai Wang and Yanran Yang</div>
+    <div class="tl-item reveal"><div class="when">SURF 2024–25</div><h3><a class="plain" href="/portfolio/surf-2024-25/">Ni/Zn Reductive Cross-Electrophile Coupling</a></h3><div class="sub">Dr Xiaotai Wang and Yanran Yang</div>
       <ul><li>Compared oxidative-addition, SET and concerted pathways in a team investigation.</li><li>Model preparation, optimisation, TS searches, energetic cycles, and reaction-energy plots.</li><li>Related cobalt-system calculations with constrained optimisations.</li><li>Learned to troubleshoot methyl-group oscillation and refine TS starting geometries.</li></ul></div>
     <div class="tl-item reveal"><div class="when">Years 2 and 3</div><h3>Chemistry Society, XJTLU</h3><div class="sub">President (Year 2) · Head of Planning (Year 3)</div>
       <ul><li>Helped restart society activities and recruit a new organising team.</li><li>Organised academic and revision talks and chemistry-themed tabletop activities.</li><li>Collaborated with the Physics and Mathematics societies and the Robotics Society (GMASTER) on outreach.</li><li>Prepared teaching on crystal structures, organic mechanisms and learning strategies.</li></ul></div>
