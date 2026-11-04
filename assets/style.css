@@ -228,3 +228,27 @@ body{background:var(--bg) radial-gradient(1200px 500px at 85% -10%,color-mix(in 
 .card .meta,.tl-item .when{color:var(--accent-2)}
 @media(prefers-reduced-motion:reduce){.rainbow,.eyebrow,.hero::before,.hero::after,.hero .aurora{animation:none}}
 .contact h2::after{content:"";display:block;width:64px;height:4px;border-radius:4px;margin:14px auto 0;background:linear-gradient(90deg,var(--accent),var(--accent-3),var(--accent-2))}
+
+/* v5: restrained academic look. Gradient is reserved for a few key phrases (.rainbow). */
+:root{--hl:linear-gradient(90deg,#e8743b,#8b5cf6 55%,#2f7be0)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--hl:linear-gradient(90deg,#ffd0b0,#b79cf5 55%,#8ec5ff)}}
+:root[data-theme="dark"]{--hl:linear-gradient(90deg,#ffd0b0,#b79cf5 55%,#8ec5ff)}
+.rainbow{background:var(--hl);background-size:100% 100%;animation:none;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+body{background:var(--bg)}
+.hero::before,.hero::after,.hero .aurora{display:none}
+.hero{background:none}
+#mol{opacity:.4}
+.eyebrow{background:none;-webkit-text-fill-color:currentColor;animation:none;color:var(--accent);display:block}
+.stats b{background:none;-webkit-text-fill-color:currentColor;color:var(--accent)}
+.sec-head h2::after,.contact h2::after{background:var(--accent);width:40px;height:3px}
+.tl::before{background:var(--line)}
+.ai-cards .card::after{background:var(--accent);height:3px}
+.progress{background:var(--accent)}
+.btn.primary{background:var(--accent);box-shadow:none;color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#140c26}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.primary{color:#140c26}}
+.btn.primary:hover{box-shadow:var(--shadow)}
+.portrait img{box-shadow:var(--shadow);outline:none}
+.tag{border-radius:6px}
+.card .meta,.tl-item .when{color:var(--muted)}
+.brand span{color:var(--accent)}
